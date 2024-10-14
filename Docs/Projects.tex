@@ -1,8 +1,22 @@
 \documentclass{article}
 \usepackage{hyperref}
+\usepackage{titlesec}
 
-\title{Overview of My Git Projects}
-\author{Sean}
+% Ensure chapters start on a new page
+\newcommand{\sectionbreak}{\clearpage}
+
+% Customize hyperlink appearance
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=blue,
+    filecolor=blue,
+    pdfborder={0 0 0}
+}
+
+\title{Overview of My Technical Projects}
+\author{Sean Groenenboom}
 \date{\today}
 
 \begin{document}
@@ -12,36 +26,224 @@
 \tableofcontents
 
 \section{Introduction}
-This document provides an overview of all my Git projects. Each section will detail a specific project, including its purpose, main features, and any relevant links.
+This document provides an overview of the technical projects I have undertaken, summarizing their objectives, features, my contributions, and links to relevant repositories or media.
 
-\section{Project 1: Project Name}
-\subsection{Purpose}
-Describe the purpose of the project here.
+\section{Robot Navigation System}
+\subsection{Objective}
+The goal was to program a Pololu robot capable of autonomous line following, maze navigation, and precise item retrieval from a storage grid. The robot also needed to handle low-battery scenarios by autonomously routing to a charging station.
 
-\subsection{Main Features}
+\subsection{Key Features}
 \begin{itemize}
-    \item Feature 1
-    \item Feature 2
-    \item Feature 3
+    \item Automatic sensor calibration for accurate line following
+    \item Pathfinding algorithm for shortest route selection
+    \item Programmable pick-up locations via a PC application
 \end{itemize}
 
-\subsection{Repository Link}
-\url{https://github.com/yourusername/project1}
+\subsection{My Role}
+I focused on the robot's behavior within the storage grid, implementing an optimized pick-up algorithm. 
+The robot systematically scanned rows along the x-axis, 
+adjusting its y-axis position upon getting all items each row. 
 
-\section{Project 2: Project Name}
-\subsection{Purpose}
-Describe the purpose of the project here.
 
-\subsection{Main Features}
+\subsection{Outcome}
+We successfully programmed the robot to autonomously navigate black tape lines, retrieve items, and return to the starting point. The system also handled battery monitoring, routing the robot to a charging station when necessary.
+
+\subsection{Technical Uses}
 \begin{itemize}
-    \item Feature 1
-    \item Feature 2
-    \item Feature 3
+    \item C for robot programming
 \end{itemize}
 
-\subsection{Repository Link}
-\url{https://github.com/yourusername/project2}
+\subsection{Links}
+The project repository on github is private.
 
-% Add more projects as needed
+Video AVANS media students made about the project:
+\url{https://www.youtube.com/watch?v=SRDnrjxwf_8&ab_channel=AvansTech}
+
+\section{Weather Monitoring Station}
+\subsection{Objective}
+This project aimed to create a weather station that collected and stored environmental data, presented through a custom GUI. It used an STM32 microcontroller, integrated sensors, and an ESP module for internet connectivity and data transmission.
+
+\subsection{Key Features}
+\begin{itemize}
+    \item ESP module for internet communication
+    \item SQL database for data storage
+    \item Qt-based GUI for data visualization
+    \item STM32 microcontroller with integrated environmental sensors
+\end{itemize}
+
+\subsection{My Role}
+I designed the PCB, configured the ESP module, and managed the SQL database. I ensured proper connections on the PCB based on sensor datasheets and programmed the ESP to relay data to the database.
+
+\subsection{Outcome}
+The system successfully collected sensor data, stored it in a SQL database, and presented it through the GUI. The STM32 handled local storage in case of network outages, preventing data loss.
+
+\subsection{Technical Uses}
+\begin{itemize}
+    \item STM32 microcontroller
+    \item ESP module for internet connectivity
+    \item SQL database
+    \item PCB design
+\end{itemize}
+
+\subsection{Links}
+This project is not hosted on Git. Files were stored in OneDrive.
+
+\section{Home Automation System}
+\subsection{Objective}
+The aim was to explore BLE technology by setting up a home automation system using Nordic dongles. The system included a custom GUI to control switches and lamps via Bluetooth, without requiring manual code changes.
+
+\subsection{Key Features}
+\begin{itemize}
+    \item Nordic dongles as switches and lamps
+    \item BLE and Bluetooth mesh for communication
+    \item Qt-based GUI for device configuration
+\end{itemize}
+
+\subsection{My Role}
+I developed the Qt GUI and researched BLE mesh networking. I also contributed to a system that allowed easy configuration of devices using the mesh network.
+
+\subsection{Outcome}
+We faced numerous challenges with the Nordic SDK during this project. Despite these difficulties, we managed to get the dongles to communicate with each other using hardcoded connections. Although the GUI was developed, we did not have enough time to implement the actual connection between the GUI and the dongles.
+
+\subsection{Technical Uses}
+\begin{itemize}
+    \item Qt for GUI development
+    \item Bluetooth Low Energy (BLE)
+    \item Bluetooth mesh networking
+    \item Nordic SDK
+\end{itemize}
+
+\subsection{Links}
+This project is not hosted on Git; files were stored in OneDrive.
+
+\section{Retro Game on FPGA}
+\subsection{Objective}
+The project focused on creating a retro-style video game implemented on an FPGA platform.
+
+\subsection{Key Features}
+\begin{itemize}
+    \item Custom game logic on FPGA
+    \item State machine for managing game states and interactions
+\end{itemize}
+
+\subsection{My Role}
+I developed the game's state machine and mechanics, ensuring smooth player control and accurate game logic.
+
+\subsection{Outcome}
+The game was successfully deployed on the FPGA, providing a classic gaming experience with responsive controls and seamless state transitions.
+
+\subsection{Technical Uses}
+\begin{itemize}
+    \item FPGA development
+    \item State machine design
+    \item Game logic implementation
+\end{itemize}
+
+\subsection{Links}
+Video about the final game we delivered:
+\url{https://youtu.be/ffHNOK9DIWc?si=P1LWv95vnLnjlM2g}
+
+
+
+\section{Internship: C-DIS Library}
+\subsection{Objective}
+During my internship, I developed a library to compress DIS data into C-DIS format and decompress it back into DIS.
+
+\subsection{Key Features}
+\begin{itemize}
+    \item Compression of DIS data
+    \item Decompression to DIS
+\end{itemize}
+
+\subsection{My Role}
+I focused on handling Electromagnetic Emission PDUs and developed a dynamic bitwise datatype for efficient compression.
+
+\subsection{Outcome}
+The project produced a functional library for compressing and decompressing DIS data. Although only a few DIS PDUs have been included, the library is designed to easily accommodate additional PDUs. Additionally, a test was provided to measure the time required for compression and decompression, as well as to compare the size of the original DIS message with the compressed CDIS message.
+\subsection{Technical Uses}
+\begin{itemize}
+    \item DIS and C-DIS knowledge
+    \item Gtest for unit testing
+    \item Valgrind for memory management
+    \item Subversion for version control
+\end{itemize}
+
+\subsection{Links}
+The project is hosted on Airbus's private Subversion repository.
+
+\section{Startweek Project}
+\subsection{Objective}
+This project involved developing a handheld device for Avans' Startweek event, designed to guide students through the city and offer mini-games along the way.
+
+\subsection{Key Features}
+\begin{itemize}
+    \item Custom-built PCB
+    \item Integration of multiple I/O components
+    \item Self-contained handheld device
+\end{itemize}
+
+\subsection{My Role}
+I developed part of the navigation system using Zephyr, integrating sensors like the LIS3MDL and LSM6DSO to determine device orientation.
+
+\subsection{Outcome}
+We produced a fully functional handheld device with a 16x16 LED matrix, a 4x4 button matrix, a 64 LED circle, multiple buttons, and a few switches, guiding students through specific locations and enabling mini-games.
+
+\subsection{Technical Uses}
+\begin{itemize}
+    \item Zephyr RTOS
+\end{itemize}
+
+\subsection{Links}
+GitHub repository:
+\url{https://github.com/JaroWMR/Startweek.git}
+
+
+\section[Generally used technical skills]
+The following is a list of skills that I have learned from the previous mentiond projects
+
+\begin{itemize}
+    \item Git(hub/kraken)
+    \item Code languages: C, C++, SQL
+    \item Qt
+    \item Zephyr RTOS
+    \item STM32 microcontroller
+    \item ESP module
+    \item Bluetooth Low Energy (BLE)
+    \item Bluetooth mesh networking
+    \item FPGA development
+    \item DIS and C-DIS knowledge
+    \item Gtest
+    \item Valgrind
+    \item Subversion
+\end{itemize}
 
 \end{document}
+
+
+
+% format
+% \section{[Project]}
+% \subsection{Objective}
+% Describe project
+
+% \subsection{Key Features}
+% \begin{itemize}
+%     \item Feature 1
+%     \item Feature 2
+%     \item Feature 3
+% \end{itemize}
+
+% \subsection{My Role}
+
+
+% \subsection{Outcome}
+
+
+% \subsection{Technical Uses}
+% \begin{itemize}
+%     \item Skill 1
+%     \item Skill 2
+%     \item Skill 3
+% \end{itemize}
+
+% \subsection{Links}

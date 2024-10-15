@@ -27,10 +27,30 @@
 
 \section{Introduction}
 This document provides an overview of the technical projects I have undertaken, summarizing their objectives, features, my contributions, and links to relevant repositories or media.
+They are listed in chronological order, starting with the oldest project.
+
+\section{Generally used technical skills}
+The following is a list of skills that I have learned from the projects I have worked on:
+
+\begin{itemize}
+    \item Git(hub/kraken)
+    \item Subversion
+    \item Programming languages: C, C++, MySQL
+    \item Qt
+    \item Zephyr RTOS
+    \item STM32 microcontrollers
+    \item ESP module
+    \item Bluetooth Low Energy (BLE)
+    \item Bluetooth mesh networking
+    \item FPGA development
+    \item DIS and C-DIS knowledge
+    \item Gtest
+    \item Valgrind
+\end{itemize}
 
 \section{Robot Navigation System}
 \subsection{Objective}
-The goal was to program a Pololu robot capable of autonomous line following, maze navigation, and precise item retrieval from a storage grid. The robot also needed to handle low-battery scenarios by autonomously routing to a charging station.
+The goal was to program a Pololu robot with a microcontroller capable of autonomous line following, maze navigation, and precise item retrieval from a storage grid. The robot also needed to handle low-battery scenarios by autonomously routing to a charging station.
 
 \subsection{Key Features}
 \begin{itemize}
@@ -48,7 +68,7 @@ adjusting its y-axis position upon getting all items each row.
 \subsection{Outcome}
 We successfully programmed the robot to autonomously navigate black tape lines, retrieve items, and return to the starting point. The system also handled battery monitoring, routing the robot to a charging station when necessary.
 
-\subsection{Technical Uses}
+\subsection{Technical Skills}
 \begin{itemize}
     \item C for robot programming
 \end{itemize}
@@ -56,7 +76,7 @@ We successfully programmed the robot to autonomously navigate black tape lines, 
 \subsection{Links}
 The project repository on github is private.
 
-Video AVANS media students made about the project:
+Video Avans media students made about the project:
 \url{https://www.youtube.com/watch?v=SRDnrjxwf_8&ab_channel=AvansTech}
 
 \section{Weather Monitoring Station}
@@ -77,7 +97,7 @@ I designed the PCB, configured the ESP module, and managed the SQL database. I e
 \subsection{Outcome}
 The system successfully collected sensor data, stored it in a SQL database, and presented it through the GUI. The STM32 handled local storage in case of network outages, preventing data loss.
 
-\subsection{Technical Uses}
+\subsection{Technical Skills}
 \begin{itemize}
     \item STM32 microcontroller
     \item ESP module for internet connectivity
@@ -85,12 +105,9 @@ The system successfully collected sensor data, stored it in a SQL database, and 
     \item PCB design
 \end{itemize}
 
-\subsection{Links}
-This project is not hosted on Git. Files were stored in OneDrive.
-
 \section{Home Automation System}
 \subsection{Objective}
-The aim was to explore BLE technology by setting up a home automation system using Nordic dongles. The system included a custom GUI to control switches and lamps via Bluetooth, without requiring manual code changes.
+The aim was to explore BLE technology by setting up a home automation system using BLE microcontroller dongles (Nordic dongles). The system included a custom GUI to control switches and lamps via Bluetooth, without requiring manual code changes.
 
 \subsection{Key Features}
 \begin{itemize}
@@ -105,16 +122,13 @@ I developed the Qt GUI and researched BLE mesh networking. I also contributed to
 \subsection{Outcome}
 We faced numerous challenges with the Nordic SDK during this project. Despite these difficulties, we managed to get the dongles to communicate with each other using hardcoded connections. Although the GUI was developed, we did not have enough time to implement the actual connection between the GUI and the dongles.
 
-\subsection{Technical Uses}
+\subsection{Technical Skills}
 \begin{itemize}
     \item Qt for GUI development
     \item Bluetooth Low Energy (BLE)
     \item Bluetooth mesh networking
     \item Nordic SDK
 \end{itemize}
-
-\subsection{Links}
-This project is not hosted on Git; files were stored in OneDrive.
 
 \section{Retro Game on FPGA}
 \subsection{Objective}
@@ -124,15 +138,17 @@ The project focused on creating a retro-style video game implemented on an FPGA 
 \begin{itemize}
     \item Custom game logic on FPGA
     \item State machine for managing game states and interactions
+    \item Parallel processing for game logic and rendering
 \end{itemize}
 
 \subsection{My Role}
 I developed the game's state machine and mechanics, ensuring smooth player control and accurate game logic.
+A big challenge was to implement everything parallel, as FPGA is not designed for sequential programming.
 
 \subsection{Outcome}
 The game was successfully deployed on the FPGA, providing a classic gaming experience with responsive controls and seamless state transitions.
 
-\subsection{Technical Uses}
+\subsection{Technical Skills}
 \begin{itemize}
     \item FPGA development
     \item State machine design
@@ -153,14 +169,16 @@ During my internship, I developed a library to compress DIS data into C-DIS form
 \begin{itemize}
     \item Compression of DIS data
     \item Decompression to DIS
+    \item C++ library
 \end{itemize}
 
 \subsection{My Role}
 I focused on handling Electromagnetic Emission PDUs and developed a dynamic bitwise datatype for efficient compression.
+By making the Electromagnetic Emission PDU I learned more about complex design with recursive structures.
 
 \subsection{Outcome}
 The project produced a functional library for compressing and decompressing DIS data. Although only a few DIS PDUs have been included, the library is designed to easily accommodate additional PDUs. Additionally, a test was provided to measure the time required for compression and decompression, as well as to compare the size of the original DIS message with the compressed CDIS message.
-\subsection{Technical Uses}
+\subsection{Technical Skills}
 \begin{itemize}
     \item DIS and C-DIS knowledge
     \item Gtest for unit testing
@@ -188,7 +206,7 @@ I developed part of the navigation system using Zephyr, integrating sensors like
 \subsection{Outcome}
 We produced a fully functional handheld device with a 16x16 LED matrix, a 4x4 button matrix, a 64 LED circle, multiple buttons, and a few switches, guiding students through specific locations and enabling mini-games.
 
-\subsection{Technical Uses}
+\subsection{Technical Skills}
 \begin{itemize}
     \item Zephyr RTOS
 \end{itemize}
@@ -196,26 +214,6 @@ We produced a fully functional handheld device with a 16x16 LED matrix, a 4x4 bu
 \subsection{Links}
 GitHub repository:
 \url{https://github.com/JaroWMR/Startweek.git}
-
-
-\section[Generally used technical skills]
-The following is a list of skills that I have learned from the previous mentiond projects
-
-\begin{itemize}
-    \item Git(hub/kraken)
-    \item Code languages: C, C++, SQL
-    \item Qt
-    \item Zephyr RTOS
-    \item STM32 microcontroller
-    \item ESP module
-    \item Bluetooth Low Energy (BLE)
-    \item Bluetooth mesh networking
-    \item FPGA development
-    \item DIS and C-DIS knowledge
-    \item Gtest
-    \item Valgrind
-    \item Subversion
-\end{itemize}
 
 \end{document}
 
@@ -239,7 +237,7 @@ The following is a list of skills that I have learned from the previous mentiond
 % \subsection{Outcome}
 
 
-% \subsection{Technical Uses}
+% \subsection{Technical Skills}
 % \begin{itemize}
 %     \item Skill 1
 %     \item Skill 2

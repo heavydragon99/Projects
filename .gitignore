@@ -16,3 +16,6 @@
 *.ps
 *.eps
 *.synctex
+
+# Ignore vscode files
+.vscode

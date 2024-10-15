@@ -12,7 +12,6 @@
 *.fdb_latexmk
 *.fls
 *.dvi
-*.pdf
 *.ps
 *.eps
 *.synctex

@@ -35,7 +35,7 @@ The following is a list of skills that I have learned from the projects I have w
 \begin{itemize}
     \item Git(hub/kraken)
     \item Subversion
-    \item Programming languages: C, C++, MySQL
+    \item Programming languages: C, C++, MySQL, Python
     \item Qt
     \item Zephyr RTOS
     \item STM32 microcontrollers
@@ -46,6 +46,8 @@ The following is a list of skills that I have learned from the projects I have w
     \item DIS and C-DIS knowledge
     \item Gtest
     \item Valgrind
+    \item Image processing with OpenCV
+    \item Neural networks with Python
 \end{itemize}
 
 \section{Robot Navigation System}
@@ -129,6 +131,33 @@ We faced numerous challenges with the Nordic SDK during this project. Despite th
     \item Bluetooth mesh networking
     \item Nordic SDK
 \end{itemize}
+
+\section{Robot with Vision System}
+\subsection{Objective}
+The objective of this project was to program a pre-built robot equipped with a camera to navigate between black tape lines on the floor and recognize traffic signs. We implemented a neural network for traffic sign recognition to accomplish this.
+
+\subsection{Key Features}
+\begin{itemize}
+    \item Vision system for real-time traffic sign detection
+    \item Neural network for sign classification
+\end{itemize}
+
+\subsection{My Role}
+In collaboration with a teammate, I developed and trained a neural network model specifically for traffic sign recognition. We used images captured by the robot's camera, first extracting traffic signs from each image and then classifying them with our neural network.
+
+\subsection{Outcome}
+Our final robot could successfully navigate along the black tape on the floor and recognize traffic signs. Due to the camera’s limited resolution, signs could only be accurately recognized at close range. Testing demonstrated that our neural network achieved an accuracy of approximately 90\% in sign detection.
+
+\subsection{Technical Skills}
+\begin{itemize}
+    \item Python for neural network development
+    \item OpenCV (cv2) for image processing
+    \item NumPy for matrix operations
+\end{itemize}
+
+\subsection{Links}
+Git repository for the project: \url{https://github.com/heavydragon99/VisionProject}
+
 
 \section{Retro Game on FPGA}
 \subsection{Objective}
